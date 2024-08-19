@@ -26,11 +26,15 @@
 <meta property="og:site_name" content="Sulawesi02&#39;s Blog">
 <meta property="og:description" content="一、前言本文是作者对于Hexo搭建的阶段总结。汇总了一些搭建过程中找到的资料。希望能够较为全面的记录博客搭建的全过程。给自己备忘，为他人提供帮助。 二、安装依赖环境1.Hexo简介Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。 2.前期安装2.1安装GitGit是目前世界上最先进的分布式版本控制系">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2015/03/48840BF0-992F-4CCC-A388-15CB74819D88.jpg">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2015/03/B0589847-A498-4415-8700-252BDE1B20C0.jpg">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2015/03/106AD534-A38A-47F3-88A3-B7BE3F2FEEF1.jpg">
 <meta property="article:published_time" content="2024-08-17T06:05:43.000Z">
-<meta property="article:modified_time" content="2024-08-17T06:26:19.611Z">
+<meta property="article:modified_time" content="2024-08-19T08:06:45.755Z">
 <meta property="article:author" content="Sulawesi02">
 <meta property="article:tag" content="Typora + PicGo + GitHub图床 + jsDelivr CDN加速">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2015/03/48840BF0-992F-4CCC-A388-15CB74819D88.jpg">
   
   
   
@@ -308,7 +312,8 @@
 
 <p>此时，在浏览器输入<code>http://localhost:4000/</code>，就可以看到 Hexo 搭建的默认主题博客示例了。</p>
 <blockquote>
-<h4 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h4><p>去主题官网，里面有上百种主题，这里选择 Fluid 主题，也是我个人在用的。</p>
+<h4 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h4><p>参考<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/start/#%E4%B8%BB%E9%A2%98%E7%AE%80%E4%BB%8B">开始使用 | Hexo Fluid 用户手册 (fluid-dev.com)</a></p>
+<p>去主题官网，里面有上百种主题，这里选择 Fluid 主题，也是我个人在用的。</p>
 <p>执行命令，将主题安装到myBlog根目录</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install --save hexo-theme-fluid<br></code></pre></td></tr></table></figure>
 
@@ -340,22 +345,24 @@
 <p>网上有的教程建议勾选 <code>Add a README file</code>自动生成一个 <code>readme.md</code>文件，但这样做后续发布 Hexo 到 GitHub时会出问题，所以这里建议不要勾选。</p>
 <p>点击<code>create repository</code>，创建仓库。</p>
 <h4 id="3-将hexo部署到GitHub-Pages"><a href="#3-将hexo部署到GitHub-Pages" class="headerlink" title="3.将hexo部署到GitHub Pages"></a>3.将hexo部署到GitHub Pages</h4><h5 id="3-1配置-Git-参数"><a href="#3-1配置-Git-参数" class="headerlink" title="3.1配置 Git 参数"></a>3.1配置 Git 参数</h5><p>在博客根目录配置用户名和邮箱</p>
-<p>其中 username 和 <a href="mailto:&#117;&#x73;&#101;&#114;&#x6e;&#x61;&#109;&#x65;&#64;&#88;&#x58;&#88;&#x2e;&#x63;&#111;&#109;">&#117;&#x73;&#101;&#114;&#x6e;&#x61;&#109;&#x65;&#64;&#88;&#x58;&#88;&#x2e;&#x63;&#111;&#109;</a> 是你注册 GitHub 的用户名和邮箱</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;username&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;useremail@XXX.com&quot;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;Sulawesi02&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;18293411692@163.com&quot;</span><br></code></pre></td></tr></table></figure>
 
-<p>然后创建SSH，输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;useremail@XXX.com&quot;</span><br></code></pre></td></tr></table></figure>
+<p>使用以下命令生成 SSH Key：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;18293411692@163.com&quot;</span><br></code></pre></td></tr></table></figure>
 
 <p>接着一路回车，直到结束。 会显示已经生成了.ssh的文件夹。在你的电脑中找到文件夹C:\Users\ <code>useraccount </code>&#x2F;.ssh&#x2F;id_rsa.pub，用记事本打开，复制全部内容。</p>
 <p>打开自己的 Github 主页，点击右上角的头像，点击Settings。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/03/48840BF0-992F-4CCC-A388-15CB74819D88.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>点击SSH and GPG keys，然后点击New SSH keys。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/03/B0589847-A498-4415-8700-252BDE1B20C0.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/03/106AD534-A38A-47F3-88A3-B7BE3F2FEEF1.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>找到SSH keys的设置选项，点击New SSH key 把id_rsa.pub里面的信息复制进去。</p>
 <p>Title 可以随便起一个名字，Key 填写上一步复制的公钥内容，然后点击Add SSH key</p>
-<p>最后执行下面的命令，测试一下 Git 参数是否配置成功。出现<code>Hi username! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code>，说明配置成功。</p>
+<p>最后执行下面的命令，测试一下 Git 参数是否配置成功。出现<code>Hi Sulawesi02! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code>，说明配置成功。</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ssh</span> -T git<span class="hljs-variable">@github</span>.com<br></code></pre></td></tr></table></figure>
 
 <h5 id="3-2发布"><a href="#3-2发布" class="headerlink" title="3.2发布"></a>3.2发布</h5><p>打开站点配置文件 _config.yml，翻到最后，修改为</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">deploy:<br>  <span class="hljs-built_in">type</span>: git<br>  repo: git@github.com:username/username.github.io.git<br>  branch: main<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">deploy:<br>  <span class="hljs-built_in">type</span>: git<br>  repo: git@github.com:Sulawesi02/Sulawesi02.github.io.git<br>  branch: main<br></code></pre></td></tr></table></figure>
 
 <p>安装deploy-git 插件，也就是部署的命令,这样你才能用命令部署到GitHub。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
@@ -363,7 +370,7 @@
 <p>然后</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 清除缓存文件，建议写完文章后执行一次</span><br>hexo clean <br><span class="hljs-comment"># 生成静态文件（生成 public 文件夹，写完文章执行）</span><br>hexo g                       g-&gt;generate<br><span class="hljs-comment"># 部署到远程站点</span><br>hexo d                       d-&gt;deploy<br><br><span class="hljs-comment"># 或者直接执行</span><br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<br></code></pre></td></tr></table></figure>
 
-<p> 执行成功可以通过&#96;&#96;https:&#x2F;&#x2F; username.github.io&#96; 来访问博客了。</p>
+<p> 执行成功可以通过&#96;&#96;https:&#x2F;&#x2F; Sulawesi02.github.io&#96; 来访问博客了。</p>
 <h2 id="五、编写Markdown文章"><a href="#五、编写Markdown文章" class="headerlink" title="五、编写Markdown文章"></a>五、编写Markdown文章</h2><p><strong>Typora + PicGo + GitHub图床 + jsDelivr CDN加速</strong></p>
 <p>使用 Typora 编写markdown文章, 拖入或者粘贴图片时，会自动调用 PicGo 将图片上传到 GitHub图床，并把返回的图片链接粘贴到文章中。GitHub 存储的图片地址是 <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/">https://raw.githubusercontent.com</a> 开头的网址，这个域名在某些地方可能打不开或者很慢导致图片加载失败，所以需要对图片配置 CDN 加速。</p>
 <h4 id="1-Typora"><a href="#1-Typora" class="headerlink" title="1.Typora"></a>1.Typora</h4><p>使用 Typora 编写markdown文章。</p>
@@ -483,9 +490,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/19/hello-world/" title="Hello World">
+                      <a href="/2024/08/19/2024-08-19-git/" title="git">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hello World</span>
+                        <span class="hidden-mobile">git</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
